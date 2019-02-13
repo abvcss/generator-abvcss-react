@@ -1,0 +1,46 @@
+{
+  "name": "generator-abvcss-react",
+  "version": "0.1.0",
+  "description": "abvCSS framework + React = the best way to create modern user interfaces",
+  "author": "Anton Babakhin",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "abvcss",
+    "abvcss-react",
+    "react",
+    "user interface",
+    "javascript",
+    "starter",
+    "css framework",
+    "css",
+    "bem",
+    "sass",
+    "less",
+    "postcss",
+    "webpack",
+    "normalize.css",
+    "bootstrap",
+    "foundation",
+    "bulma"
+  ],
+  "homepage": "https://abvcss.github.io/abvcss-website/",
+  "bugs": "https://github.com/abvcss/generator-abvcss-react/issues",
+  "repository": "abvcss/generator-abvcss-react",
+  "scripts": {
+    "test": "mocha --timeout 20000 --slow 0"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "dependencies": {
+    "deep-extend": "*",
+    "mocha": "5.2.0",
+    "yeoman-assert": "3.1.1",
+    "yeoman-generator": "*",
+    "yeoman-test": "1.8.0"
+  },
+  "license": "MIT"
+}

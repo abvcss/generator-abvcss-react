@@ -1,6 +1,6 @@
 {
   "name": "generator-abvcss-react",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "abvCSS framework + React = the best way to create modern user interfaces",
   "author": "Anton Babakhin",
   "files": [

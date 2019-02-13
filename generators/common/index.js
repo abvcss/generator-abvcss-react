@@ -24,11 +24,6 @@ module.exports = class extends Generator {
       this.destinationPath('.gitignore')
     );
 
-    this.fs.copy(
-      this.templatePath('babelrc'),
-      this.destinationPath('.babelrc')
-    );
-
     this.fs.copyTpl(
       this.templatePath('LICENSE.ejs'),
       this.destinationPath('LICENSE'),
@@ -47,9 +42,22 @@ module.exports = class extends Generator {
       { title: this.options['title'] }
     );
 
-    this.fs.copy(
-      this.templatePath('index.jsx'),
-      this.destinationPath('src/index.jsx')
+    if(this.options['styledComponents']) {
+      this.fs.copy(
+        this.templatePath('index-styled.jsx'),
+        this.destinationPath('src/index.jsx')
+      );
+    } else {
+      this.fs.copy(
+        this.templatePath('index.jsx'),
+        this.destinationPath('src/index.jsx')
+      );
+    }
+
+    this.fs.copyTpl(
+      this.templatePath('babelrc.ejs'),
+      this.destinationPath('.babelrc'),
+      { styledComponents: this.options['styledComponents'] }
     );
 
   }

@@ -62,6 +62,10 @@ module.exports = class extends Generator {
       type    : 'confirm',
       name    : 'rucksack',
       message : 'Would you like to enable rucksack-css plugin for PostCSS?'
+    }, {
+      type    : 'confirm',
+      name    : 'styledComponents',
+      message : 'Would you like to use cssinjs framework styled-components?'
     }]);
 
     answers.name = answers.name || 'Untitled';
@@ -99,7 +103,8 @@ module.exports = class extends Generator {
     }
 
     this.composeWith(require.resolve('../common'), {
-      title: this.props.name
+      title: this.props.name,
+      styledComponents: this.props.styledComponents
     });
 
   }
@@ -139,6 +144,11 @@ module.exports = class extends Generator {
 
     if (this.props.rucksack) {
       tmplt.devDependencies['rucksack-css'] = '*';      
+    }
+
+    if (this.props.styledComponents) {
+      tmplt.devDependencies['styled-components'] = '*';      
+      tmplt.devDependencies['babel-plugin-styled-components'] = '*';      
     }
 
     this.fs.writeJSON(this.destinationPath('package.json'), tmplt);    
